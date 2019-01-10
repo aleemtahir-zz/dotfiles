@@ -4,7 +4,6 @@
 cp ./img/* $HOME/Pictures/
 
 # Download debs
-wget -P $HOME/Downloads https://mega.nz/linux/MEGAsync/xUbuntu_18.04/amd64/megasync-xUbuntu_18.04_amd64.deb
 wget -P $HOME/Downloads https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 # Install debs
@@ -46,18 +45,18 @@ sudo snap install postman
 sudo snap install vscode --classic
 
 # Set zsh as default shell
-chsh -s $(which zsh)
+#chsh -s $(which zsh)
 
 # Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+#sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Install nvm
-get_latest_release() {
-  curl --silent "https://api.github.com/repos/$1/releases/latest" | # Get latest release from GitHub api
-    grep '"tag_name":' |                                            # Get tag line
-    sed -E 's/.*"([^"]+)".*/\1/'                                    # Pluck JSON value
-}
-curl -o- https://raw.githubusercontent.com/creationix/nvm/$(get_latest_release "creationix/nvm")/install.sh | bash
+#get_latest_release() {
+#  curl --silent "https://api.github.com/repos/$1/releases/latest" | # Get latest release from GitHub api
+#    grep '"tag_name":' |                                            # Get tag line
+#    sed -E 's/.*"([^"]+)".*/\1/'                                    # Pluck JSON value
+#}
+#curl -o- https://raw.githubusercontent.com/creationix/nvm/$(get_latest_release "creationix/nvm")/install.sh | #bash
 
 #  Install docker
 sudo apt remove docker docker-engine docker.io
@@ -76,7 +75,7 @@ sudo apt install -y ./jumpapp*all.deb
 cd $HOME/dotfiles/
 
 # Clear downloaded debs
-rm $HOME/Downloads/*.deb
+#rm $HOME/Downloads/*.deb
 
 sudo apt upgrade
 
@@ -87,4 +86,4 @@ sudo apt-get install -f
 git clean -f
 
 # Import Cinnamon desktop settings
-dconf load /org/cinnamon/ < ./cinnamon.conf
+#dconf load /org/cinnamon/ < ./cinnamon.conf
